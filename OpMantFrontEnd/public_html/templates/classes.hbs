@@ -1,0 +1,24 @@
+<table class="table table-hover table-bordered table-responsive">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Fecha</td>
+            <td>Hora</td>
+            <td>Salon</td>
+            <td>Profesor</td>
+        </tr>
+    </thead>
+    <tbody class="tbody-class">
+        {{#each values}}
+        <tr>
+            <td>
+                <a href="#" field-value="{{id_class}}">{{name_class}}</a>
+            </td>
+            <td><a href="#">{{date}}</a></td>
+            <td><a href="#">{{hour}}</a></td>
+            <td><a href="#">{{classroom}}</a></td>
+            <td><a href="#">{{nameTeacher}}</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,126 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OpMant</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#" id="faculty-btn" data-toggle="modal" data-target=".faculty-modal">Facultades</a></li>
+                <li><a href="#" id="class-btn">Clases</a></li>
+                <li><a href="#" id="absence-btn" data-toggle="modal" data-target=".absence-modal">Ausencias</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div id="contentContainer" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Próximas 10 clases</div> 
+                <div class="panel-body">                
+                    {{{classes}}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Ultimas 10 inasistencias</div> 
+                <div class="panel-body">                
+                    {{{absences}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade faculty-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Facultades</h4>
+                </div>
+                {{{faculty}}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".add-faculty-modal">Agregar facultad</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal -->
+    <div class="modal fade add-faculty-modal" id="faculty-add" tabindex="-1" role="dialog" aria-labelledby="addFaculty" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Agregar facultad</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="faculty-name" class="control-label">Nombre: </label>
+                            <input type="text" class="form-control" id="faculty-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="add-faculty-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade absence-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Ausencias</h4>
+                </div>
+                {{{absences}}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".add-absence-modal">Agregar Ausencia</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal -->
+    <div class="modal fade add-absence-modal" id="absence-add" tabindex="-1" role="dialog" aria-labelledby="addFaculty" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Agregar Ausencia</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="class-name" class="control-label">Nombre clase: </label>
+                            <input type="text" class="form-control" id="class-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="teacher-name" class="control-label">Nombre profesor Ausente: </label>
+                            <input type="text" class="form-control" id="teacher-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="replace-name" class="control-label">Nombre profesor de reemplazo: </label>
+                            <input type="text" class="form-control" id="replace-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="add-absence-btn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
